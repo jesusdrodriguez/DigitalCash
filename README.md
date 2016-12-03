@@ -1,2 +1,2 @@
 # DigitalCash
-Mockup
+Mockup site: http://jesusrodriguez.me/apps/DigitalCash/
