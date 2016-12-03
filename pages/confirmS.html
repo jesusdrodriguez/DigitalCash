@@ -31,14 +31,26 @@
 
 <div class="container">
   <div class="info">
-    <h1>Selling</h1>
+    <h2>Confirm Transaction (Selling)</h2>
     <!--<span>Made with <i class="fa fa-heart"></i> by <a href="http://andytran.me">Andy Tran</a></span>-->
   </div>
 </div>
-<div class="form">
-  <form class="login-form">
-    <p style="font-size:20px">$ <input type="number" pattern="[0-9]*" style="width: 50%"><a href="qrcode.html"><input type="button" value="Generate QR Code" id="bttn"></a><p>
-  </form>
+<div class="form" style="text-align: left">
+  <div style="float: left">
+    <p>Amount: </p>
+    <p>Buyer: </p>
+    <p>Transaction #: </p>
+  </div>
+
+  <div style="text-align: right">
+    <p>$12.00</p>
+    <p>Joe Doe<p>
+    <p>100213674</p>
+  </div>
+
+  <a href="receipt.html"><input type="button" value="Accept" id="bttn" style="width:49%"/></a>
+  <a href="../index.html"><input type="button" value="Reject" id="bttn" style="width:49%"/></a>
+
 </div>
 <!-- <video id="video" autoplay="autoplay" loop="loop" poster="polina.jpg">
   <source src="http://andytran.me/A%20peaceful%20nature%20timelapse%20video.mp4" type="video/mp4"/>
