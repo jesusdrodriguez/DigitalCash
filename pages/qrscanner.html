@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Digital Cash</title>
+  <link rel="icon" type="images/png" href="../images/logo.png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
   <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900'>
   <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Montserrat:400,700'>
@@ -36,10 +37,11 @@
   </div>
 </div>
 <div class="form">
-  <input type="file" accept="image/*" capture="camcorder">
-  <form class="login-form">
-    <a href="confirmB.html"><input type="button" value="Scan" id="bttn"/></a>
-  </form>
+    <input type="file" capture="camera" accept="image/*" id="takePictureField">
+		<img id="yourimage">
+    <form class="login-form">
+      <a href="confirmB.html"><input type="button" value="Scan" id="bttn"/></a>
+    </form>
 </div>
 <!-- <video id="video" autoplay="autoplay" loop="loop" poster="polina.jpg">
   <source src="http://andytran.me/A%20peaceful%20nature%20timelapse%20video.mp4" type="video/mp4"/>
@@ -48,6 +50,37 @@
  <footer id="footer">
    Copyright © Digital Cash
  </footer>
+
+
+ <script>
+ var desiredWidth;
+     $(document).ready(function() {
+         console.log('onReady');
+ 		$("#takePictureField").on("change",gotPic);
+ 		$("#yourimage").load(getSwatches);
+ 		desiredWidth = window.innerWidth;
+
+         if(!("url" in window) && ("webkitURL" in window)) {
+             window.URL = window.webkitURL;
+         }
+
+ 	});
+ 	function getSwatches(){
+ 		var colorArr = createPalette($("#yourimage"), 5);
+ 		for (var i = 0; i < Math.min(5, colorArr.length); i++) {
+ 			$("#swatch"+i).css("background-color","rgb("+colorArr[i][0]+","+colorArr[i][1]+","+colorArr[i][2]+")");
+ 			console.log($("#swatch"+i).css("background-color"));
+ 		}
+ 	}
+
+     //Credit: https://www.youtube.com/watch?v=EPYnGFEcis4&feature=youtube_gdata_player
+ 	function gotPic(event) {
+         if(event.target.files.length == 1 &&
+            event.target.files[0].type.indexOf("image/") == 0) {
+             $("#yourimage").attr("src",URL.createObjectURL(event.target.files[0]));
+         }
+ 	}
+ </script>
  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
  <script src="../js/index.js"></script>
  <script src="../js/nav.js"></script>

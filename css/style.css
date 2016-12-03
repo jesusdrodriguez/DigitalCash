@@ -295,9 +295,9 @@ Loading page
 */
 #fountainG{
 	padding: 150px;
-	position:relative;
-	width:150px;
-	height:36px;
+	position:absolute;;
+	width:100%;
+	height:auto;
 	text-align: center;
 }
 
@@ -473,3 +473,25 @@ Loading page
 		background-color:rgb(255,255,255);
 	}
 }
+
+
+/*
+QR SCANNER
+*/
+#yourimage {
+    padding: 30px;
+		width: 250px;
+    height: 250px;
+    position: relative;;
+  }
+	#swatches {
+		width: 100px;
+		height: 100px;
+	}
+	.swatch {
+		width:80%;
+		height: 80%;
+		border-style:solid;
+		border-width:thin;
+    position: absolute;
+	}
